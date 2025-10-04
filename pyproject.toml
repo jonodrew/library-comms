@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "librarycomms"
+version = "0.1.0"
+description = ""
+authors = ["jonathan.kerr <3410350+jonodrew@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytest = "^8.4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
