@@ -1,6 +1,16 @@
 
 import datetime
 
+def filter_date(all_data: list[dict[str, str]]) -> list[dict[str, str]]:
+    """Takes all data on due and overdue items and filters for items due tomorrow or in the past"""
+    filtered_data = []
+    today = datetime.date.today()
+    for row in all_data:
+        due_date = datetime.datetime.strptime(row["Due_date"], "%d/%m/%Y").date()
+        if due_date < today or due_date == today + datetime.timedelta(days=1):
+            filtered_data.append(row)
+    return filtered_data
+
 def create_message(user_details: dict[str, str]) -> str:
     """
     Create a message from a user's details. The kind of message that will be created depends on the due date.
