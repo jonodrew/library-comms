@@ -3,7 +3,6 @@ import datetime
 
 from twilio.rest import Client
 
-
 def filter_data(all_data: list[dict[str, str]]) -> list[dict[str, str]]:
     """Takes all data on due and overdue items and filters for items due tomorrow or in the past"""
     filtered_data = []
@@ -37,20 +36,6 @@ def send_message(message: str, phone_number: str) -> None:
     )
     return None
 
-    # //
-    # base_message = f"Hello {name}"
-    # if due_date > today:
-    #     message  = base_message + "grrr I'm mad"
-    # else:
-    #     # do something different
-    #
-    # return ""
-
-# def overdue_message(user_details: dict[str, str]) -> str:
-#     return ""
-#
-# def reminder_message(user_details: dict[str, str]) -> str:
-#     return ""
 def create_client() -> Client:
     """
     Create a Twilio client using the tokens from the web interface. They should be kept secret and not published.
