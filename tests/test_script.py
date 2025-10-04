@@ -1,8 +1,11 @@
+from unittest.mock import patch
+from twilio.rest import Client
 from pytest import fixture
 from freezegun import freeze_time
 
 from src.read import get_details
-from src.message import create_message, filter_date
+from src.message import create_message, filter_date, send_message
+
 
 @fixture
 def single_user():
@@ -25,3 +28,8 @@ def test_filter_date():
     test_details = get_details(filepath="tests/test_data.csv")
     filtered_details = filter_date(test_details)
     assert len(filtered_details) == 2
+
+def test_send_message():
+    with patch("src.message.create_client") as mock_twilio_client:
+        send_message("Hello, Harry!", "07777777777")
+    assert mock_twilio_client.return_value.messages.create.called

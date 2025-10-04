@@ -10,6 +10,7 @@ package-mode = false
 python = "^3.12"
 pytest = "^8.4.2"
 freezegun = "^1.5.5"
+twilio = "^9.8.3"
 
 
 [build-system]
