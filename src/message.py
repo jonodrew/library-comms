@@ -4,7 +4,7 @@ import datetime
 from twilio.rest import Client
 
 
-def filter_date(all_data: list[dict[str, str]]) -> list[dict[str, str]]:
+def filter_data(all_data: list[dict[str, str]]) -> list[dict[str, str]]:
     """Takes all data on due and overdue items and filters for items due tomorrow or in the past"""
     filtered_data = []
     today = datetime.date.today()

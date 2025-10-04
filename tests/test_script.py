@@ -4,7 +4,7 @@ from pytest import fixture
 from freezegun import freeze_time
 
 from src.read import get_details
-from src.message import create_message, filter_date, send_message
+from src.message import create_message, filter_data, send_message
 
 
 @fixture
@@ -26,7 +26,7 @@ def test_create_message_when_due(single_user):
 @freeze_time("2025-10-04")
 def test_filter_date():
     test_details = get_details(filepath="tests/test_data.csv")
-    filtered_details = filter_date(test_details)
+    filtered_details = filter_data(test_details)
     assert len(filtered_details) == 2
 
 def test_send_message():
