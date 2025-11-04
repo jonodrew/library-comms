@@ -199,6 +199,24 @@ publication = ">=0.0.3"
 typeguard = ">=2.13.3,<5.0.0"
 
 [[package]]
+name = "aws-cdk-aws-lambda-python-alpha"
+version = "2.222.0a0"
+description = "The CDK Construct Library for AWS Lambda in Python"
+optional = false
+python-versions = "~=3.9"
+files = [
+    {file = "aws_cdk_aws_lambda_python_alpha-2.222.0a0-py3-none-any.whl", hash = "sha256:afdcd861eaeaf1c86c96d26d2a482304b3e77f3420a15951589881746cee7635"},
+    {file = "aws_cdk_aws_lambda_python_alpha-2.222.0a0.tar.gz", hash = "sha256:1e82749d9a588fe0b5ce7aa37f6b10990241d45ee1d2660914adc96b5f01ee58"},
+]
+
+[package.dependencies]
+aws-cdk-lib = ">=2.222.0,<3.0.0"
+constructs = ">=10.0.0,<11.0.0"
+jsii = ">=1.118.0,<2.0.0"
+publication = ">=0.0.3"
+typeguard = ">=2.13.3,<4.3.0"
+
+[[package]]
 name = "aws-cdk-cloud-assembly-schema"
 version = "48.17.0"
 description = "Schema for the protocol between CDK framework and CDK CLI"
@@ -233,6 +251,44 @@ constructs = ">=10.0.0,<11.0.0"
 jsii = ">=1.118.0,<2.0.0"
 publication = ">=0.0.3"
 typeguard = ">=2.13.3,<4.3.0"
+
+[[package]]
+name = "boto3"
+version = "1.40.65"
+description = "The AWS SDK for Python"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "boto3-1.40.65-py3-none-any.whl", hash = "sha256:ab91d8d8ef0477997d35abebf67829e52e50bf807b02333affa384c70b33c86b"},
+    {file = "boto3-1.40.65.tar.gz", hash = "sha256:52e2715838d65e6b000e0077a942ce2d3e1a38f9764414ad01a602912eccf924"},
+]
+
+[package.dependencies]
+botocore = ">=1.40.65,<1.41.0"
+jmespath = ">=0.7.1,<2.0.0"
+s3transfer = ">=0.14.0,<0.15.0"
+
+[package.extras]
+crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
+
+[[package]]
+name = "botocore"
+version = "1.40.65"
+description = "Low-level, data-driven core of boto 3."
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "botocore-1.40.65-py3-none-any.whl", hash = "sha256:152f595321f5a2b712601286650e912c2e5ca3b109892ab4c0175ac58d8de10d"},
+    {file = "botocore-1.40.65.tar.gz", hash = "sha256:cdbbf9d90a9e9c4a6000055013d98b92efc4ceb1bce0d9bcd70e14461dc22ab3"},
+]
+
+[package.dependencies]
+jmespath = ">=0.7.1,<2.0.0"
+python-dateutil = ">=2.1,<3.0.0"
+urllib3 = {version = ">=1.25.4,<2.2.0 || >2.2.0,<3", markers = "python_version >= \"3.10\""}
+
+[package.extras]
+crt = ["awscrt (==0.27.6)"]
 
 [[package]]
 name = "cattrs"
@@ -554,6 +610,17 @@ python-versions = ">=3.8"
 files = [
     {file = "iniconfig-2.1.0-py3-none-any.whl", hash = "sha256:9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760"},
     {file = "iniconfig-2.1.0.tar.gz", hash = "sha256:3abbd2e30b36733fee78f9c7f7308f2d0050e88f0087fd25c2645f63c773e1c7"},
+]
+
+[[package]]
+name = "jmespath"
+version = "1.0.1"
+description = "JSON Matching Expressions"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "jmespath-1.0.1-py3-none-any.whl", hash = "sha256:02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980"},
+    {file = "jmespath-1.0.1.tar.gz", hash = "sha256:90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"},
 ]
 
 [[package]]
@@ -927,6 +994,23 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "s3transfer"
+version = "0.14.0"
+description = "An Amazon S3 Transfer Manager"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "s3transfer-0.14.0-py3-none-any.whl", hash = "sha256:ea3b790c7077558ed1f02a3072fb3cb992bbbd253392f4b6e9e8976941c7d456"},
+    {file = "s3transfer-0.14.0.tar.gz", hash = "sha256:eff12264e7c8b4985074ccce27a3b38a485bb7f7422cc8046fee9be4983e4125"},
+]
+
+[package.dependencies]
+botocore = ">=1.37.4,<2.0a.0"
+
+[package.extras]
+crt = ["botocore[crt] (>=1.37.4,<2.0a.0)"]
+
+[[package]]
 name = "six"
 version = "1.17.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -939,13 +1023,13 @@ files = [
 
 [[package]]
 name = "twilio"
-version = "9.8.3"
+version = "9.8.5"
 description = "Twilio API client and TwiML generator"
 optional = false
 python-versions = ">=3.7.0"
 files = [
-    {file = "twilio-9.8.3-py2.py3-none-any.whl", hash = "sha256:9182797ce26e0ed0ab95e7631aa3a91587f35da6402f6a2b33d87b8badc8d588"},
-    {file = "twilio-9.8.3.tar.gz", hash = "sha256:4409af2681f53c6d4a052232615b6e63b2b3f7fbd83b14bed54d90891cb12d0d"},
+    {file = "twilio-9.8.5-py2.py3-none-any.whl", hash = "sha256:7e1d04bb2cd480a97937f1fbea5fe35377925b6f70745baade08bde9cd4fb319"},
+    {file = "twilio-9.8.5.tar.gz", hash = "sha256:b69dc2226294ef579fcdd92b502aef7982a60577110a0799f8c2b739428e1dcf"},
 ]
 
 [package.dependencies]
@@ -1118,4 +1202,4 @@ propcache = ">=0.2.1"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "596f0c1bfa6d1fddcac2c754243def17a3f856df45a6e6c420862d9852154eba"
+content-hash = "2e97a33ec01b9f8b20623bb0b60110be80421e209cd5f16cb697be628102f0fe"
